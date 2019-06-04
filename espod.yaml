@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: es
+spec:
+  containers:
+    - image: elasticsearch:6.7.2
+      name: elasticsearch
+      env:
+        - name: discovery.type
+          value: single-node

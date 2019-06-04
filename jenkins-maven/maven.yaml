@@ -1,0 +1,21 @@
+#  $ docker run -it --rm -v "$PWD":/usr/src/mymaven -v "$HOME/.m2":/root/.m2 -v "$PWD/target:/usr/src/mymaven/target" -w /usr/src/mymaven maven mvn clean package
+#三个目录，源码目录，仓库目录，target目录
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mymaven
+spec:
+#  restartPolicy: Never
+  volumes:
+    - name: maven-repo
+      persistentVolumeClaim:
+        claimName: maven-repo-pvc
+  containers:
+    - image: maven:3.6.1-jdk-8
+      name: maven
+      tty: true
+      command: ['bash']
+      volumeMounts:
+        - mountPath: "/root/.m2"
+          name: "maven-repo"
+  nodeName: kworker1.example.com

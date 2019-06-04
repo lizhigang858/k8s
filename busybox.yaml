@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mybusybox
+spec:
+#  如果打开了restartPolicy的注释，那么pod就不会被重启，如果打开了，那么pod的状态会从running马上变为succeeded.并且不能进入shell
+  restartPolicy: Never
+  containers:
+    - image: radial/busyboxplus:curl
+      name: busybox
+#    如果加上了tty=true，那么即使没有restartPolicy: OnFailure，pod也不会结束，可以进入shell
+      tty: true
+#      如果加上了命令，那么即使tty=true，那么pod也会结束，如果没有加restartPolicy: OnFailure，那么pod会不断的重启
+#      command: ["echo","$(abc)"]
+      env:
+        - name: abc
+          value: "123"

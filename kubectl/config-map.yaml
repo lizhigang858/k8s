@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kube-config-map
+data:
+  config: |
+    apiVersion: v1
+    kind: Config
+    clusters:
+      - name: "dell-cluster"
+        cluster:
+          server: "https://192.168.50.100/k8s/clusters/c-6smc9"
+          certificate-authority-data: "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM3akNDQ\
+          WRhZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFvTVJJd0VBWURWUVFLRXdsMGFHVXQKY\
+          21GdVkyZ3hFakFRQmdOVkJBTVRDV05oZEhSc1pTMWpZVEFlRncweE9UQTFNakV3T1RVM01qRmFGd\
+          zB5T1RBMQpNVGd3T1RVM01qRmFNQ2d4RWpBUUJnTlZCQW9UQ1hSb1pTMXlZVzVqYURFU01CQUdBM\
+          VVFQXhNSlkyRjBkR3hsCkxXTmhNSUlCSWpBTkJna3Foa2lHOXcwQkFRRUZBQU9DQVE4QU1JSUJDZ\
+          0tDQVFFQXM3WmphOWNwWjI3RDR6RHoKYURTR1NDWUdreDJBeldNcy8wZTVmVUlFSEx4Umlhem0ye\
+          jZ4dVA1clRzazNiR3BiNisrVHNyTDAzc2NCOGk2WgpRbUthQWFmR2U2cWhmS29jNXE5Mm1YNjNPM\
+          VZYUVdISlBESG9DZTVTVmpQUVJUOW90T2c0S0N6N0lQM1AweDNPCk9xSWdYeWptdEF4U2tiWmxNZ\
+          GpxN1lTZjQrVnBWL0g0bEMzNE1oNERqU0V6WTZQbks0cUhkMzAyV0ljazhaZVMKT0picUl3T3lkY\
+          nRrdWIvMEtZa1YzMCtkNW1UbjViRE5CU1Z0anBSMFY5dFBYc2luS0hmakpXL05DblplNUI1VgpOZ\
+          HU2dlR1RVhOMWt6UU5lNWJHL1FVR290RlZqMG5WUGJGMmk3Z0tid1hMRktCRXdDaGtKQWFzVXhUa\
+          UpMQmZmClZsNVRnd0lEQVFBQm95TXdJVEFPQmdOVkhROEJBZjhFQkFNQ0FxUXdEd1lEVlIwVEFRS\
+          C9CQVV3QXdFQi96QU4KQmdrcWhraUc5dzBCQVFzRkFBT0NBUUVBbFpkaDdYOURKNDdzVEtCdUc0R\
+          1NiNklsMEdic1krWmhFeEI0cXZhdQowZEFma0UwbkJ2STJzYi9jbUpJR0t1QXF1Tnk2bDFVbWh1T\
+          DFSRTM2N1VTNC9Jc3FRK21TemdKcUwybGw1clNmClBBdm9TK3k4V2V0M0JIcWkyVDRqdUlja2R2a\
+          GNTdVhtRmRnRDI3aU80Smc5NmJac0VmZXNOWTJqQW12ZE5WdTgKelllOHpHVm12SVNKczg1YTR2b\
+          VFnMjRPYzNYUk13Qm1OVTRPN01seVhXZUhrcEl3T3d1OURqODVlcWtKejVBcgpRbWVGWlpBWEc4M\
+          lBPMkVIYmVaZDBkb1U2Z0xUTlBNNnFzQzFqcnRDYkNDTWNENEVya1lXM0JKa09SNVF2bklXClNOa\
+          nN3RThBOFRtZkFaaitodkc0L1BFL2dia2F6Rmp4UFZoZnNZTFNlS1BwbkE9PQotLS0tLUVORCBDR\
+          VJUSUZJQ0FURS0tLS0t"
+
+    users:
+      - name: "user-7vbn9"
+        user:
+          token: "kubeconfig-user-7vbn9:nv2dgvnqwdpl4gt8d88z8khmb8vz2qn7jjvn29jcrbdzhkblfp4qcg"
+
+    contexts:
+      - name: "dell-cluster"
+        context:
+          user: "user-7vbn9"
+          cluster: "dell-cluster"
+
+    current-context: "dell-cluster"
