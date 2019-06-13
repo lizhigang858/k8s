@@ -1,0 +1,2 @@
+配合node程序k8sboot使用的是一个启动脚本，首先安装node和sshpass，然后执行node程序
+来初始化一个k8s集群
